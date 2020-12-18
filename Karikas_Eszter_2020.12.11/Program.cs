@@ -34,19 +34,19 @@ namespace Karikas_Eszter_2020._12._11
             Console.Write("Kérem adja meg a dolgozatánka pontszámát: ");
             int pontszam = int.Parse(Console.ReadLine());
             //int pont = int.Parse(pontszam);
-            if (pontszam >= 0 && pontszam <= 49)
-            {
+            if (pontszam <= 49)
+            { 
                 Console.WriteLine("Az Ön pontszámának megfelelő jegye elégtelen!");
             }
-            else if (pontszam >= 50 && pontszam <= 64)
+            else if (pontszam <= 64)
             {
                 Console.WriteLine("Az Ön pontszámának megfelelő jegye elégséges!");
             }
-            else if (pontszam >= 65 && pontszam <= 79)
+            else if (pontszam <= 79)
             {
                 Console.WriteLine("Az Ön pontszámának megfelelő jegye közepes!");
             }
-            else if (pontszam >= 80 && pontszam <= 89)
+            else if (pontszam <= 89)
             {
                 Console.WriteLine("Az Ön pontszámának megfelelő jegye jó!");
             }
@@ -56,6 +56,46 @@ namespace Karikas_Eszter_2020._12._11
             }
 
             //
+            //switch case
+            Console.Write("Kérem adja meg az osztályzatát (1-5): ");
+            string jegy = Console.ReadLine();
+            switch (jegy)
+            {
+                case "1": Console.WriteLine("elégtelen"); break;
+                case "2": Console.WriteLine("elégséges"); break;
+                case "3": Console.WriteLine("közepes"); break;
+                case "4": Console.WriteLine("jó"); break;
+                case "5": Console.WriteLine("jeles"); break;
+                default: Console.WriteLine("Nem jól adta meg a jegyet!");break;
+            }
+
+            //Progrmozás:
+            //1 Szekvencia: utasítások sorozata
+            //2 Szelekció: if-else, switch-case
+            //3 Iteráció: más néven ciklusok
+            // - előltesztelős ciklus
+            // - hátultesztelős ciklus
+            // -növekményes, vagy számlálós ciklus
+
+            //1.feladat
+            Console.Write("adjon meg egy egész számot: ");
+            //int szam  = int.Parse(Console.ReadLine());
+            Console.WriteLine(Math.Abs(int.Parse(Console.ReadLine())));
+
+            //2.feladat
+            //Véletlenszám generálása
+            Random veletlen = new Random();
+            int szam1 = veletlen.Next(0,11);
+            int szam2 = veletlen.Next(0, 11);
+            int szam3 = veletlen.Next(0, 11);
+            int oszto = 3;
+            double atlag  = (double) (szam1  +  szam2  +  szam3)  /  oszto;
+            //Console.WriteLine($"a három véletlen szám {szam1}, {szam2}, {szam3} átlaga: {Math.Round(atlag,2)}");
+            Console.WriteLine($"a három véletlen szám {szam1}, {szam2}, {szam3} átlaga: {atlag.ToString("0.00")}");
+
+            int a = 3;
+            int b = 5;
+            Console.WriteLine(Math.Pow(a, b));
             Console.ReadKey();
         }
     }
