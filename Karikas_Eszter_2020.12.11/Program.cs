@@ -96,6 +96,10 @@ namespace Karikas_Eszter_2020._12._11
             int a = 3;
             int b = 5;
             Console.WriteLine(Math.Pow(a, b));
+
+            //Házi feladat
+            //Sorsolj ki egy egész számot az [1;99] intervallumból, és írd ki, 
+            //milyen számjegyre végződik!
             Console.ReadKey();
         }
     }
