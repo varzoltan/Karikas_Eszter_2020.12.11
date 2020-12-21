@@ -73,9 +73,9 @@ namespace Karikas_Eszter_2020._12._11
             //1 Szekvencia: utasítások sorozata
             //2 Szelekció: if-else, switch-case
             //3 Iteráció: más néven ciklusok
-            // - előltesztelős ciklus
-            // - hátultesztelős ciklus
-            // -növekményes, vagy számlálós ciklus
+            // - előltesztelős ciklus //Ha nem tudjuk hányszor kell lefutnia a ciklusnak
+            // - hátultesztelős ciklus //Ha nem tudjuk hányszor kell lefutnia a ciklusnak
+            // -növekményes, vagy számlálós ciklus //Ha tudjuk hányszor kell lefuztnia a ciklusnak!
 
             //1.feladat
             Console.Write("adjon meg egy egész számot: ");
@@ -87,7 +87,7 @@ namespace Karikas_Eszter_2020._12._11
             Random veletlen = new Random();
             int szam1 = veletlen.Next(0,11);
             int szam2 = veletlen.Next(0, 11);
-            int szam3 = veletlen.Next(0, 11);
+            int szam3 = veletlen.Next(11);
             int oszto = 3;
             double atlag  = (double) (szam1  +  szam2  +  szam3)  /  oszto;
             //Console.WriteLine($"a három véletlen szám {szam1}, {szam2}, {szam3} átlaga: {Math.Round(atlag,2)}");
@@ -96,10 +96,33 @@ namespace Karikas_Eszter_2020._12._11
             int a = 3;
             int b = 5;
             Console.WriteLine(Math.Pow(a, b));
+            int szam4 = veletlen.Next(1,100);
 
             //Házi feladat
             //Sorsolj ki egy egész számot az [1;99] intervallumból, és írd ki, 
             //milyen számjegyre végződik!
+            double maradek = (double) szam4 % 10;
+            Console.WriteLine($"A szám ({szam4}) végződése: {maradek}");
+
+            //4.feladat: Sorsolj ki egy egész számot a [7;24] intervallumból. 
+            //Írd ki a szám osztóit!
+            int szam5 = veletlen.Next(7,25);
+            //számlálós ciklussal oldjuk meg!
+            /*for(//honnan indulunk;Meddig megyünk;Lépésköz)
+            {
+            }*/
+            Console.Write($"4.feladat\nA {szam5} osztói: 1, ");
+            for(int i = 2;i <= szam5/2;i++)
+            {
+                if(szam5 % i == 0)
+                {
+                    Console.Write($"{i}, ");
+                }
+            }
+            Console.Write($" {szam5}");
+
+            //5.feladat: Generáljunk egy véletlen egész számot a [90;100] intervallumból.
+            //5.1. Számoljuk meg hány darab páros és páratlan osztólya van a generált számnak.
             Console.ReadKey();
         }
     }
