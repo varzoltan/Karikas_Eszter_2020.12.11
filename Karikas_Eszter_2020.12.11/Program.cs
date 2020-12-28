@@ -123,6 +123,75 @@ namespace Karikas_Eszter_2020._12._11
 
             //5.feladat: Generáljunk egy véletlen egész számot a [90;100] intervallumból.
             //5.1. Számoljuk meg hány darab páros és páratlan osztólya van a generált számnak.
+            Console.WriteLine("\n5.feladat");
+            int szam6 = veletlen.Next(90, 101);
+            int paros = 0;//Összegzéd tétele
+            int paratlan = 0;
+            for (int i = 2; i <= szam6 / 2; i++)
+            {
+                if (szam6 % i == 0)
+                {
+                   if(i%2==0)
+                   {
+                        paros++;
+                   }
+                   else
+                   {
+                        paratlan++;
+                   }
+                }
+            }
+            Console.WriteLine($" A véletlen szám páros osztója: {paros} darab, páratlan osztója: {paratlan} darab");
+            Console.Write($" {szam6}");
+
+            //6.feladat
+            //Kérj be 2 egész számot a felhasználótól a [-100;100] intervallumból, 
+            //és írd ki a közöttük lévő páros számokat!
+            int szam7 = veletlen.Next(-100, 101);
+            int szam8 = veletlen.Next(-100, 101);
+            Console.WriteLine($"\n6.feladat {szam7}, {szam8}");
+            if (szam7 > szam8)
+            {
+                for (int i = szam8; i <= szam7; i++)
+                {
+                    if(i%2==0)
+                    {
+                        Console.Write($"{i} ");
+                    }
+                }
+
+            }
+            else
+            {
+                for (int i = szam7; i <= szam8; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.Write($"{i} ");
+                    }
+                }
+            }
+
+            //7.feladat
+            //Kérj be egy negatív egész számot a felhasználótól, és írd ki az ettől nagyobb negatív számokat!
+            Console.Write($"\n7.feladat\nKérem adjon meg egy negatív egész számot: ");
+            int negativ_egesz = int.Parse(Console.ReadLine());
+            for(int i=negativ_egesz; i<=0;i++)
+            {
+                Console.Write($"{i} ");
+            }
+            //előltesztelős ciklussal oldom meg a feladatot!
+            //int lepeskoz = 0;
+            Console.WriteLine();
+            while(negativ_egesz <= 0)
+            {
+                Console.Write($"{negativ_egesz} ");
+                negativ_egesz++;
+            }
+
+            //8.feladat
+            // Hozz létre egy 10 elemű tömböt, amit tölts fel a [0;20] intervallumból véletlen számokkal! 
+            // Írd ki a tömb páros egyjegyű számait!
             Console.ReadKey();
         }
     }
