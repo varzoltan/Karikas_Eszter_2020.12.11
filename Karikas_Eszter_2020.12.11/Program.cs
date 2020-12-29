@@ -80,7 +80,7 @@ namespace Karikas_Eszter_2020._12._11
             //1.feladat
             Console.Write("adjon meg egy egész számot: ");
             //int szam  = int.Parse(Console.ReadLine());
-            Console.WriteLine(Math.Abs(int.Parse(Console.ReadLine())));
+            //Console.WriteLine(Math.Abs(int.Parse(Console.ReadLine())));
 
             //2.feladat
             //Véletlenszám generálása
@@ -127,6 +127,8 @@ namespace Karikas_Eszter_2020._12._11
             int szam6 = veletlen.Next(90, 101);
             int paros = 0;//Összegzéd tétele
             int paratlan = 0;
+            int[] parostomb = new int[90];
+            int[] paratlantomb = new int[90];
             for (int i = 2; i <= szam6 / 2; i++)
             {
                 if (szam6 % i == 0)
@@ -134,15 +136,34 @@ namespace Karikas_Eszter_2020._12._11
                    if(i%2==0)
                    {
                         paros++;
+                        parostomb[i] = i;
                    }
                    else
                    {
                         paratlan++;
+                        paratlantomb[i] = i;
                    }
                 }
             }
             Console.WriteLine($" A véletlen szám páros osztója: {paros} darab, páratlan osztója: {paratlan} darab");
-            Console.Write($" {szam6}");
+            Console.Write($"\n{szam6}\n");
+            Console.Write($"Páros számok:");
+            for(int i = 0;i<parostomb.Length;i++)
+            {
+                if(parostomb[i] != 0)
+                {
+                    Console.Write(parostomb[i]+" ");
+                }              
+            }
+            Console.WriteLine();
+            Console.Write($"Páratlan számok:");
+            for(int i = 0;i<parostomb.Length;i++)
+            {
+                if(paratlantomb[i] != 0)
+                {
+                    Console.Write(paratlantomb[i]+" ");
+                }               
+            }
 
             //6.feladat
             //Kérj be 2 egész számot a felhasználótól a [-100;100] intervallumból, 
@@ -192,6 +213,33 @@ namespace Karikas_Eszter_2020._12._11
             //8.feladat
             // Hozz létre egy 10 elemű tömböt, amit tölts fel a [0;20] intervallumból véletlen számokkal! 
             // Írd ki a tömb páros egyjegyű számait!
+            //1.lépés: Inicializálunk egy 10 elemü tömböt
+            int[] tomb8 = new int[10];
+            //2.lépés: Véletelnszám objektum inicializálása
+            Random veletlen8 = new Random();
+            //3.lépés: Ciklus használata a véletlenszám generálásra és a tömmbe helyezésére
+            Console.WriteLine($"\n8.feladat\nA tömb páros egyjegyű számai: ");
+            /*for (int i=0;i<tomb8.Length;i++)
+            {
+                tomb8[i] = veletlen8.Next(0, 21);
+                if (tomb8[i] % 2 == 0 && tomb8[i] < 10)
+                {
+                    Console.Write($"{tomb8[i]} ");
+                }
+            }*/
+            int index = 0;
+            while(index<tomb8.Length)
+            {
+                tomb8[index] = veletlen8.Next(0, 21);
+                if (tomb8[index] % 2 == 0 && tomb8[index] < 10)
+                {
+                    Console.Write($"{tomb8[index]} ");                  
+                }
+                index++;
+            }
+
+            //10 feladat: Készítsünk programot, amely bekéri a víz hőmérsékletét, majd eldönti, hogy az milyen halmazállapotú. 
+            //A halmazállapot lehet folyékony, gőz, vagy jég.
             Console.ReadKey();
         }
     }
