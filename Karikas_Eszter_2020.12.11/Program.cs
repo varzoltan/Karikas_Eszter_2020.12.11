@@ -240,6 +240,43 @@ namespace Karikas_Eszter_2020._12._11
 
             //10 feladat: Készítsünk programot, amely bekéri a víz hőmérsékletét, majd eldönti, hogy az milyen halmazállapotú. 
             //A halmazállapot lehet folyékony, gőz, vagy jég.
+            Console.Write("Kérem adja meg a viz hőmérsékletét: ");
+            int hofok = int.Parse(Console.ReadLine());
+            if(hofok<0)
+            {
+                Console.WriteLine("A viz halmazállapota: jég!!!");
+            }
+            else if(hofok>0 && hofok<100)
+            {
+                Console.WriteLine("A viz halmazállapota: folyékony!!!");
+            }
+            else
+            {
+                Console.WriteLine("A viz halmazállapota: gőz!!!");
+            }
+
+            //11.feladat: Olvasd be az ax2+bx+c=0 egyenlet együtthatóit, majd írd ki az egyenlet megoldásait!
+            Console.Write("Kérem adja meg a másodfokú egyenlet \"x\" együtthatóját: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("Kérem adja meg a másodfokú egyenlet \"y\" együtthatóját: ");
+            int y = int.Parse(Console.ReadLine());
+            Console.Write("Kérem adja meg a másodfokú egyenlet \"z\" együtthatóját: ");
+            int z = int.Parse(Console.ReadLine());
+            double negyzetgyok = Math.Sqrt(Math.Pow((double)y,2.0) -4*x*z);
+            if(negyzetgyok < 0)
+            {
+                Console.WriteLine("Az egyenletnek nincs megoldása!!!");
+            }
+            else if(negyzetgyok == 0)
+            {
+                Console.WriteLine($"Az egyenletnek két egybeeső gyöke van: {-y/(2*x)}");
+            }
+            else
+            {
+                double x1 = (-y + negyzetgyok) / 2*x;
+                double x2 = (-y - negyzetgyok) / 2*x;
+                Console.WriteLine($"Az egyenlet megoldásai x1={x1.ToString("0.00")} és x2={Math.Round(x2,2)}");
+            }
             Console.ReadKey();
         }
     }
